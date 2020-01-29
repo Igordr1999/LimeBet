@@ -1,0 +1,40 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{% trans "LimeBet" %} | {% trans "Our team" %}{% endblock %}
+
+{% block extra_block %}{% endblock extra_block %}
+
+{% block data_menu %}
+    <h2>{% trans "Our team" %}</h2>
+
+    <div class="uk-child-width-1-2" uk-grid>
+        <div>
+            <img src="https://pp.userapi.com/c845124/v845124396/87864/mbV-U380Uyc.jpg?ava=1" width="100" height="100">
+            <span class="uk-text-top">{% trans "Igor Drobyashchenko, TeamLead & FullStack Developer" %}</span>
+        </div>
+
+        <div>
+            <img src=https://sun1-28.userapi.com/c852120/v852120858/10b093/nRwQpuyDwfk.jpg?ava=1" width="100" height="100">
+            <span class="uk-text-top">{% trans "Denis Sannikov, Android Developer" %}</span>
+        </div>
+
+        <div>
+            <img src="https://sun1-28.userapi.com/c848732/v848732237/84917/-6exyiQ0O_0.jpg?ava=1" width="100" height="100">
+            <span class="uk-text-top">{% trans "Edward Mailyan, Sprint manager & Frontend Developer" %}</span>
+        </div>
+
+        <div>
+            <img src="https://pp.userapi.com/c846321/v846321930/107758/kR_4kvOnsqM.jpg?ava=1" width="100" height="100">
+            <span class="uk-text-top">{% trans "Maxim Vasilyuk, Tester" %}</span>
+        </div>
+
+        <div>
+            <img src="https://sun1-23.userapi.com/c846321/v846321771/438fb/zR1Yiqhxdq4.jpg?ava=1" width="100" height="100">
+            <span class="uk-text-top">{% trans "Anton Manohin, Tester" %}</span>
+        </div>
+    </div>
+
+{% endblock data_menu %}

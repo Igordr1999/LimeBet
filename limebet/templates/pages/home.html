@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{% trans "Limebet" %} | {% trans "Home page" %}{% endblock %}
+
+{% block content %}
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="ratio: false; autoplay: true; autoplay-interval: 5000; animation: fade;">
+
+        <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-top: 80">
+            <li><video src="https://www.videvo.net/videvo_files/converted/2015_08/preview/PlayingWithPlane.mp437981.webm" autoplay loop muted playsinline uk-cover></video></li>
+            <li><iframe src="https://www.youtube-nocookie.com/embed/X3Zs-HZczUM?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&modestbranding=1&wmode=transparent&playsinline=1" width="1920" height="1080" frameborder="0" allowfullscreen uk-cover></iframe></li>
+            <li><iframe src="https://www.youtube-nocookie.com/embed/B0cUafg_FZU?autoplay=1&controls=0&showinfo=0&rel=0&loop=1&modestbranding=1&wmode=transparent&playsinline=1" width="1920" height="1080" frameborder="0" allowfullscreen uk-cover></iframe></li>
+            <li><video src="https://275110.selcdn.ru/svoaero/v4/departures.mp4_2000k_1280x720/departures_fragmented.mp4.mp4?locale=ru" autoplay loop muted playsinline uk-cover></video></li>
+            <li><video src="https://www.videvo.net/videvo_files/converted/2014_09/preview/Sunset_Pool_HDV_1080p25_MP4__TanuriX_Stock_Footage.mp459025.webm" autoplay loop muted playsinline uk-cover></video></li>
+            <li><video src="https://cdn.videvo.net/videvo_files/video/free/2019-01/small_watermarked/181015_16b_Venice%20Fishing%20Pier_HD_036_preview.webm" autoplay loop muted playsinline uk-cover></video></li>
+            <li><video src="https://www.videvo.net/videvo_files/converted/2014_08/preview/Fuego_de_Refineria.mp416312.webm" autoplay loop muted playsinline uk-cover></video></li>
+            <li><video src="https://www.videvo.net/videvo_files/converted/2015_08/preview/cat_in_the_sun.mp446278.webm" autoplay loop muted playsinline uk-cover></video></li>
+            <li><video src="https://cdn.videvo.net/videvo_files/video/free/2018-10/small_watermarked/motionplaces0045-c007-q001-Oct2018_preview.webm" autoplay loop muted playsinline uk-cover></video></li>
+        </ul>
+
+        <div class="uk-position-bottom-center uk-position-small">
+            <ul class="uk-dotnav">
+                <li uk-slideshow-item="0"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="1"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="2"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="3"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="4"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="5"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="6"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="7"><a href="#">{% trans "BLOCK" %}</a></li>
+                <li uk-slideshow-item="8"><a href="#">{% trans "BLOCK" %}</a></li>
+            </ul>
+        </div>
+
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+    </div>
+
+    <div class="uk-section uk-section-secondary uk-light">
+        <div class="uk-container">
+        </div>
+    </div>
+
+    <div uk-slider="center: true" class="uk-padding-top uk-section-secondary">
+
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+            <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="https://www.fxmag.pl/images/articles/sygnaly-zlotego-i-martwego-krzyza.jpg" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title" style="color: #1e87f0">{% trans "Successful financial strategies" %}</h3>
+                            <p>{% trans "We use betting forks, odds (revalued bets) and betting corridors. More details on the How It Works page." %}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="https://insporti.com/wp-content/uploads/2018/08/cham.jpg" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title" style="color: #1e87f0">{% trans "We explore many sporting events and quotes" %}</h3>
+                            <p>{% trans "Over 50 leagues in more than 15 countries." %}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="https://tecnovortex.com/wp-content/uploads/2019/06/google-datacenter.jpg" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title" style="color: #1e87f0">{% trans "We have an open public API" %}</h3>
+                            <p>{% trans "More details on the Developer page." %}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="https://interset.com/wp-content/uploads/2018/02/Fotolia_165428801_Subscription_Monthly_XXL-e1545419956239.jpg" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title" style="color: #1e87f0">{% trans "We use machine learning" %}</h3>
+                            <p>{% trans "We use machine learning to predict the outcome of sporting events." %}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-card uk-card-default">
+                        <div class="uk-card-media-top">
+                            <img src="https://avatars.mds.yandex.net/get-pdb/2056989/a5e8d860-cf86-4e76-a5e7-b0267a154445/s1200" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-card-title" style="color: #1e87f0">{% trans "Our winning strategies are based on probability theory" %}</h3>
+                            <p>{% trans "More details on the How It Works page." %}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+        </div>
+
+        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "Sports" %}{% endblock %}
+{% block data_title %}{% trans "Sports" %}{% endblock %}
+
+{% block data_content %}
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.name }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% bootstrap_pagination page_obj %}
+{% endblock %}

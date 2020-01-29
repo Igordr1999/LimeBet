@@ -1,0 +1,29 @@
+html{
+    width: 100%;
+}
+
+.image-point {
+    background: springgreen;
+    height: 3px;
+    position: absolute;
+    width: 3px;
+    border-radius: 50%;
+}
+
+.identified_picture {
+    display: inline-block;
+    position: relative;
+}
+
+.face-box {
+            border: 2px solid rgba(255, 255, 255, 0.69);
+            border-radius: 3%;
+}
+
+#footer-background{
+    background: #001929;
+}
+
+.my-green{
+    color: springgreen;
+}

@@ -1,0 +1,85 @@
+image: docker:latest
+services:
+  - docker:dind
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+variables:
+  CONTAINER_COMPOSE_IMAGE: limebet_djangoapp
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
+
+test:
+  stage: test
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_COMPOSE_IMAGE
+    - docker run $CONTAINER_TEST_IMAGE /bin/bash -c "pip install tox && tox -e test"
+
+safety:
+  stage: test
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_COMPOSE_IMAGE
+    - docker run $CONTAINER_TEST_IMAGE /bin/bash -c "pip install tox && tox -e checksafety"
+
+style:
+  stage: test
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_COMPOSE_IMAGE
+    - docker run $CONTAINER_TEST_IMAGE /bin/bash -c "pip install tox && tox -e checkstyle"
+
+
+release-image:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
+
+deploy-staging:
+  stage: deploy
+  script:
+    - echo "Deploy to staging server"
+  environment:
+    name: staging
+    url: http://37.228.118.80
+  only:
+    - master
+
+deploy-prod:
+  stage: deploy
+  image: gitlab/dind:latest
+  only:
+  - master
+  environment:
+    name: production
+    url: https://limebet.ru
+  services:
+    - docker:dind
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$DEPLOY_SERVER_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - eval "$(ssh-agent -s)"
+    - ssh-add <(echo "$DEPLOY_SERVER_PRIVATE_KEY")
+    - ssh-keyscan -H $DEPLOYMENT_SERVER_IP >> ~/.ssh/known_hosts
+  script:
+    - scp -r ./docker-compose.yml ./Dockerfile ./Makefile ./config ./limebet ./Pipfile ./Pipfile.lock ubuntu@$DEPLOYMENT_SERVER_IP:~/
+    - ssh ubuntu@$DEPLOYMENT_SERVER_IP "docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY; docker pull $CONTAINER_RELEASE_IMAGE; sudo docker-compose -f docker-compose.yml stop; chmod +x ./limebet/manage.py; make makemigrations; make migrate; make collectstatic; sudo docker-compose -f docker-compose.yml up -d"

@@ -1,0 +1,172 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "Surebets" %}{% endblock %}
+{% block data_title %}{% trans "Surebets" %}{% endblock %}
+
+{% block data_content %}
+    <h3>{% trans "Football. Top 5" %}</h3>
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Profit" %}</th>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0.98%</td>
+            <td>{% trans "Fonbet" %}</td>
+            <td>{% trans "Reims" %} - {% trans "Lyon" %}</td>
+            <td>H1(0)</td>
+            <td>2.12</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Leon" %}</td>
+            <td></td>
+            <td>X</td>
+            <td>3.15</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "MarathonBet" %}</td>
+            <td></td>
+            <td>2</td>
+            <td>2.85</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Profit" %}</th>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0.74%</td>
+            <td>{% trans "Baltbet" %}</td>
+            <td>{% trans "RB Leipzig" %} - {% trans "Augsburg" %}</td>
+            <td>Total under 2.5</td>
+            <td>2.03</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Winline" %}</td>
+            <td></td>
+            <td>Total over 2.5</td>
+            <td>2.00</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Profit" %}</th>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0.73%</td>
+            <td>{% trans "Baltbet" %}</td>
+            <td>{% trans "Mallorca" %} - {% trans "Sevilla" %}</td>
+            <td>Total under 2.5</td>
+            <td>1.67</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Marathon" %}</td>
+            <td></td>
+            <td>Total over 2.5</td>
+            <td>2.55</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Profit" %}</th>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0.65%</td>
+            <td>{% trans "1XBET" %}</td>
+            <td>{% trans "Brugge" %} - {% trans "Man Utd" %}</td>
+            <td>Total over 2.25</td>
+            <td>1.79</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Baltbet" %}</td>
+            <td></td>
+            <td>Total under 2.5</td>
+            <td>2.02</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Parimatch" %}</td>
+            <td></td>
+            <td>Total under 1.5</td>
+            <td>3.55</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Profit" %}</th>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>0.65%</td>
+            <td>{% trans "Parimatch" %}</td>
+            <td>{% trans "PSG" %} - {% trans "Amiens" %}</td>
+            <td>H1(-1.5)</td>
+            <td>1.95</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{% trans "Winline" %}</td>
+            <td></td>
+            <td>H2(+1.5)</td>
+            <td>2.08</td>
+        </tr>
+
+        </tbody>
+    </table>
+{% endblock %}

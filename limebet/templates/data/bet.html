@@ -1,0 +1,291 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{{ object.name }}{% endblock %}
+{% block data_title %}{{ object.name }}{% endblock %}
+
+{% block data_content %}
+    <div class="uk-grid-divider" uk-grid>
+        <div class="uk-width-1-5">
+            <h3 class="text-center">{{ object.home_team.name }}</h3>
+            <img src="{{ object.home_team.logo.url }}">
+        </div>
+
+        <div class="uk-width-3-5">
+            <div uk-grid>
+                <img class="uk-width-1-5" src="{{ object.league.logo.url }}">
+                <h2 class="text-center uk-width-3-5">{{ object.league.name }}</h2>
+                <img class="uk-width-1-5" src="{{ object.league.logo.url }}">
+            </div>
+
+            <div class="uk-grid-small uk-child-width-auto" uk-grid uk-countdown="date: {{ object.start_time.isoformat }}">
+                <div>
+                    <div class="uk-countdown-number uk-countdown-days"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">{% trans "Days" %}</div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-hours"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">{% trans "Hours" %}</div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-minutes"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">{% trans "Minutes" %}</div>
+                </div>
+                <div class="uk-countdown-separator">:</div>
+                <div>
+                    <div class="uk-countdown-number uk-countdown-seconds"></div>
+                    <div class="uk-countdown-label uk-margin-small uk-text-center uk-visible@s">{% trans "Seconds" %}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-width-1-5">
+            <h3 class="text-center">{{ object.away_team.name }}</h3>
+            <img src="{{ object.away_team.logo.url }}">
+        </div>
+    </div>
+
+    <div uk-grid>
+        <div class="uk-width-1-1">
+
+            <div id="toggle_result" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <h3>{% trans "Make bet. Result" %}</h3>
+
+                </div>
+            </div>
+
+            <div id="toggle_handicap" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <h3>{% trans "Make bet. Handicap" %}</h3>
+
+                </div>
+            </div>
+
+            <div id="toggle_total" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                    <h3>{% trans "Make bet. Total" %}</h3>
+
+                </div>
+            </div>
+
+            <div uk-filter="target: .js-filter">
+
+                <div class="uk-grid-small uk-grid-divider uk-child-width-auto" uk-grid>
+                    <div>
+                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                            <li class="uk-active" uk-filter-control><a href="#">{% trans "All quotes" %}</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                            {% for period in new_median_results_quotes %}
+                                {% if period %}
+                                    <li uk-filter-control="filter: [data-period='{{ forloop.counter0 }}']; group: data-period">
+                                        <a href="#">{% if forloop.counter0 == 0 %}Full time{% else %}Period {{ forloop.counter0 }}{% endif %}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="uk-subnav uk-subnav-pill" uk-margin>
+                            <li uk-filter-control="filter: [data-type='results']; group: data-type"><a href="#">{% trans "Results" %}</a></li>
+                            <li uk-filter-control="filter: [data-type='handicaps']; group: data-type"><a href="#">{% trans "Handicaps" %}</a></li>
+                            <li uk-filter-control="filter: [data-type='totals']; group: data-type"><a href="#">{% trans "Totals" %}</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="js-filter uk-child-width-1-1 uk-text-center" uk-grid="masonry: true">
+                    {% for period in new_median_results_quotes %}
+                        {% if period %}
+                            <li data-period="{{ forloop.counter0 }}" data-type="results">
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <h2 class="uk-heading-line uk-text-center">
+                                        <span>{% trans "Result" %}, {% if forloop.counter0 == 0 %}{% trans "full time" %} {% else %}{% trans "period" %} {{ forloop.counter0 }}{% endif %}</span></h2>
+                                    <table class="uk-table uk-table-striped">
+                                        <thead>
+                                        <tr>
+                                            {% for quote in period %}
+                                                {% if quote.0.quote_name == 0 %}<th>1</th>{% endif %}
+                                                {% if quote.0.quote_name == 1 %}<th>X</th>{% endif %}
+                                                {% if quote.0.quote_name == 2 %}<th>2</th>{% endif %}
+                                                {% if quote.0.quote_name == 3 %}<th>1X</th>{% endif %}
+                                                {% if quote.0.quote_name == 4 %}<th>12</th>{% endif %}
+                                                {% if quote.0.quote_name == 5 %}<th>X2</th>{% endif %}
+                                            {% endfor %}
+                                        </tr>
+                                        </thead>
+
+                                        <tr>
+                                            {% for quote in period %}
+                                                <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_result">{{ quote.1 }}</button>
+                                            {% endfor %}
+                                        </tr>
+                                    </table>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for period in new_median_handicap_quotes %}
+                        {% if period %}
+                            <li data-period="{{ forloop.counter0 }}" data-type="handicaps">
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <h2 class="uk-heading-line uk-text-center"><span>{% trans "Handicaps" %}, {% if forloop.counter0 == 0 %}{% trans "full time" %} {% else %}{% trans "period" %} {{ forloop.counter0 }}{% endif %}</span></h2>
+                                    <div class="uk-child-width-1-2" uk-grid>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Handicap" %}-1</th>
+                                                    <th>{% trans "Quote value" %}</th>
+                                                </tr>
+                                                </thead>
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 1 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_handicap">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Handicap" %}-2</th>
+                                                    <th>{% trans "Quote value" %}</th>
+                                                </tr>
+                                                </thead>
+
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 2 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_handicap">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% for period in new_median_total_quotes %}
+                        {% if period %}
+                            <li data-period="{{ forloop.counter0 }}" data-type="totals">
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <h2 class="uk-heading-line uk-text-center"><span>{% trans "Totals" %}, {% if forloop.counter0 == 0 %}{% trans "full time" %} {% else %}{% trans "period" %} {{ forloop.counter0 }}{% endif %}</span></h2>
+                                    <div class="uk-child-width-1-4" uk-grid>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Total" %}-1</th>
+                                                    <th>{% trans "Under" %}</th>
+                                                </tr>
+                                                </thead>
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 1 and quote.0.under_or_over == -1 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_total">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Total" %}-1</th>
+                                                    <th>{% trans "Over" %}</th>
+                                                </tr>
+                                                </thead>
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 1 and quote.0.under_or_over == 1 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_total">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Total" %}-2</th>
+                                                    <th>{% trans "Under" %}</th>
+                                                </tr>
+                                                </thead>
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 2 and quote.0.under_or_over == -1 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_total">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                        <div>
+                                            <table class="uk-table uk-table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>{% trans "Total" %}-2</th>
+                                                    <th>{% trans "Over" %}</th>
+                                                </tr>
+                                                </thead>
+
+                                                {% for quote in period %}
+                                                    {% if quote.0.team_number == 2 and quote.0.under_or_over == 1 %}
+                                                        <tr>
+                                                            <td>{{ quote.0.quote_name }}</td>
+                                                            <td><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" type="button" uk-toggle="target: #toggle_total">{{ quote.1 }}</button>
+                                                        </tr>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

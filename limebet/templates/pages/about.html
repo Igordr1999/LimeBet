@@ -1,0 +1,64 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{% trans "LimeBet" %} | {% trans "About" %}{% endblock %}
+
+{% block extra_block %}{% endblock extra_block %}
+
+{% block data_menu %}
+    <h3>{% trans "LimeBet is a betting trader. LimeBet is a financial instrument for searching and researching betting quotes, analyzing sports events and concluding winning bets on the websites of well-known bookmakers" %}</h3>
+
+    <h3>{% trans "We independently analyze bookmaker quotes and produce the best surebets, betting corridors and overvalued bets thanks to machine learning and proven financial strategies. This way you win real money in the long run." %}</h3>
+
+    <div class="uk-child-width-1-3" uk-grid>
+        <div>
+            <div class="uk-countdown-number">4</div>
+            <h3 class="uk-margin-small ">{% trans "Sports" %}</h3>
+        </div>
+
+        <div>
+            <div class="uk-countdown-number">7</div>
+            <h3 class="uk-margin-small">{% trans "Bookmakers" %}</h3>
+        </div>
+
+        <div>
+            <div class="uk-countdown-number">32</div>
+            <h3 class="uk-margin-small">{% trans "Leagues" %}</h3>
+        </div>
+
+        <div>
+            <div class="uk-countdown-number">200</div>
+            <h3 class="uk-margin-small">{% trans "Unique quotes by events" %}</h3>
+        </div>
+
+        <div>
+            <div class="uk-countdown-number">500</div>
+            <h3 class="uk-margin-small">{% trans "Teams" %}</h3>
+        </div>
+
+        <div>
+            <div class="uk-countdown-number">1000+</div>
+            <h3 class="uk-margin-small">{% trans "Events per week" %}</h3>
+        </div>
+
+    </div>
+    <h3>{% trans "Service features" %}:</h3>
+    <dl class="uk-description-list uk-description-list-divider">
+        <dt>{% trans "Search max quotes" %}</dt>
+        <dd>{% trans "Search for maximum coefficients for each quote and each event." %}</dd>
+
+        <dt>{% trans "Virtual betting bets" %}</dt>
+        <dd>{% trans "We conduct a forecast competition among our users. To do this, we set our coefficients." %}</dd>
+
+        <dt>{% trans "We display ready surebets, betting corridors and overvalued bets" %}</dt>
+        <dd>{% trans "We analyze the line in real time and with the help of machine learning and financial strategies, we derive the best surebets, betting corridors and overvalued bets" %}</dd>
+
+        <dt>{% trans "REST API support" %}</dt>
+        <dd>{% trans "Download megabytes of data in tens of thousands of lines in a few seconds in easy automatic mode" %}</dd>
+
+        <dt>{% trans "Foreign language support" %}</dt>
+        <dd>{% trans "Our site fully supports 5 languages: Russian, English, German, French and Ukrainian." %}</dd>
+    </dl>
+{% endblock data_menu %}

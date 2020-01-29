@@ -1,0 +1,48 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{% trans "Limebet" %} | {% trans "Platform status" %}{% endblock %}
+
+{% block extra_block %}{% endblock extra_block %}
+
+{% block data_menu %}
+    <h1>{% trans "All systems" %} <strong class="my-green">OK</strong></h1>
+
+    <hr>
+
+    <ul uk-accordion>
+        <li>
+            <a class="uk-accordion-title" href="#">{% trans "Our parsers" %} <strong class="my-green">OK</strong></a>
+            <div class="uk-accordion-content">
+                <p>{% trans "Checking the operation of our parsers" %}</p>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">{% trans "Our databases" %} <strong class="my-green">OK</strong></a>
+            <div class="uk-accordion-content">
+                <p>{% trans "Verifying database operation" %}</p>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">{% trans "Search of surebets and other" %} <strong class="my-green">OK</strong></a>
+            <div class="uk-accordion-content">
+                <p>{% trans "Search of surebets, bookmaker revalued quotes and corridors" %}</p>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">{% trans "Our bookmaker" %} <strong class="my-green">OK</strong></a>
+            <div class="uk-accordion-content">
+                <p>{% trans "Checking the operation of our bookmaker" %}</p>
+            </div>
+        </li>
+        <li>
+            <a class="uk-accordion-title" href="#">{% trans "REST API" %} <strong class="my-green">OK</strong></a>
+            <div class="uk-accordion-content">
+                <p>{% trans "API performance" %}</p>
+            </div>
+        </li>
+    </ul>
+
+{% endblock data_menu %}

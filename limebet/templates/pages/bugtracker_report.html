@@ -1,0 +1,84 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "LimeBet" %} | {% trans "Search" %}{% endblock %}
+{% block data_title %}{% trans "Bug tracker" %}{% endblock %}
+
+{% block data_content %}
+    <div uk-grid>
+        <div class="uk-width-1-1">
+            <div class="uk-button-group">
+                <a class="uk-button uk-button-primary " href="{% url 'bugtracker_create' %}">{% trans "Create report" %}</a>
+                <a class="uk-button uk-button-primary " href="{% url 'bugtracker_my_reports' %}">{% trans "My reports" %}</a>
+                <a class="uk-button uk-button-primary" href="{% url 'bugtracker_reports' %}">{% trans "All reports" %}</a>
+            </div>
+
+            <div class="uk-card uk-card-default uk-link-toggle uk-margin-small">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" width="40" height="40" src="https://getuikit.com/docs/images/avatar.jpg">
+                        </div>
+                        <div class="uk-width-expand">
+                            <h3 class="uk-card-title uk-margin-remove-bottom">{{ object.title }}</h3>
+                            <p class="uk-text-meta uk-margin-remove-top"><time datetime="{{ object.create_time.isoformat }}">{{ object.create_time }}</time></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <h3>{% trans "Description" %}</h3>
+                    <p>{{ object.description }}</p>
+                    <hr>
+
+                    <h3>{% trans "Playback steps" %}</h3>
+                    <p>{{ object.playback_steps }}</p>
+                    <hr>
+
+                    <h3>{% trans "Expected result" %}</h3>
+                    <p>{{ object.expected_result }}</p>
+                    <hr>
+                    <h3>{% trans "Factual result" %}</h3>
+                    <p>{{ object.factual_result }}</p>
+
+                    {% if object.screenshot %}
+                        <img data-src="{{ object.screenshot.url }}" width="200px" alt="" uk-img>
+                    {% endif %}
+
+                    <hr class="uk-divider-icon">
+                    <div class="uk-width-1-2">
+                        <div class="uk-grid-small" uk-grid>
+                            <div class="uk-width-expand" uk-leader>{% trans "Product" %}</div>
+                            <div>{{ object.product }}</div>
+                        </div>
+
+                        <div class="uk-grid-small" uk-grid>
+                            <div class="uk-width-expand" uk-leader>{% trans "Type" %}</div>
+                            <div>{{ object.type_report }}</div>
+                        </div>
+
+                        <div class="uk-grid-small" uk-grid>
+                            <div class="uk-width-expand" uk-leader>{% trans "Priority" %}</div>
+                            <div>{{ object.priority }}</div>
+                        </div>
+
+                        <div class="uk-grid-small" uk-grid>
+                            <div class="uk-width-expand" uk-leader>{% trans "Tags" %}</div>
+                            <div>{% for i in object.tags.all %}{{ i.name }}{% endfor %}</div>
+                        </div>
+
+                        <div class="uk-grid-small" uk-grid>
+                            <div class="uk-width-expand" uk-leader>{% trans "Status" %}</div>
+                            <div>{{ object.status }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-footer">
+                    <a href="{% url 'bugtracker_reports' %}" class="uk-button uk-button-text">{% trans "Return" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock data_content %}

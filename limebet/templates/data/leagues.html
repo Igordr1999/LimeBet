@@ -1,0 +1,63 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "First 20 leagues by filter" %}{% endblock %}
+{% block data_title %}{% trans "First 20 leagues by filter" %}{% endblock %}
+
+{% block data_content %}
+    <div uk-grid>
+        <div class="uk-width-3-4">
+            <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+                <thead>
+                <tr>
+                    <th>{% trans "Name" %}</th>
+                    <th>{% trans "Sport" %}</th>
+                    <th>{% trans "Country" %}</th>
+                    <th>{% trans "Logo" %}</th>
+                    <th>{% trans "Music" %}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for object in filter.qs %}
+                    {% if forloop.counter <= 20 %}
+                        <tr>
+                            <td>{{ object.name }}</td>
+                            <td>{{ object.sport.name }}</td>
+                            <td>{{ object.country.name }}</td>
+                            <td>
+                                {% if object.logo %}
+                                    <img class="uk-preserve-width" src="{{ object.logo.url }}" width="40" alt="">
+                                {% else %}
+                                    <img class="uk-preserve-width" src="#" width="40" alt="NO IMAGE">
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if object.music %}
+                                    <audio src="{{ object.music.url }}" controls></audio>
+                                {% else %}
+                                    <a class="uk-preserve-width" href="#">{% trans "No music =(   " %}</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="uk-width-1-4">
+            <h3 class="text-center">Filters</h3>
+            {% bootstrap_messages %}
+            <form method="get" class="form">
+                {% csrf_token %}
+                {% bootstrap_form filter.form %}
+                {% buttons %}
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">{% trans "Search" %}</button>
+                {% endbuttons %}
+            </form>
+        </div>
+    </div>
+{% endblock data_content %}

@@ -1,0 +1,70 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "Valuebets" %}{% endblock %}
+{% block data_title %}{% trans "Valuebets" %}{% endblock %}
+
+{% block data_content %}
+    <h3>{% trans "Football. Top 5" %}</h3>
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Bookmaker" %}</th>
+            <th>{% trans "Event" %}</th>
+            <th>{% trans "Bet" %}</th>
+            <th>{% trans "Coefficient" %}</th>
+            <th>{% trans "Probability" %}</th>
+            <th>{% trans "Overvaluation" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{% trans "1XBET" %}</td>
+            <td>{% trans "Marseille" %} - {% trans "Nimes" %}</td>
+            <td>Total-2 >= 4</td>
+            <td>99.00</td>
+            <td>1.76%</td>
+            <td>+74.1%</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "1XBET" %}</td>
+            <td>{% trans "Torino" %} - {% trans "SPAL" %}</td>
+            <td>H2(-2)</td>
+            <td>72.00</td>
+            <td>1.81%</td>
+            <td>+30.0%</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "Fonbet" %}</td>
+            <td>{% trans "Malaga" %} - {% trans "Lugo" %}</td>
+            <td>Total-1 over 2</td>
+            <td>3.30</td>
+            <td>32.9%</td>
+            <td>+8.66%</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "Parimatch" %}</td>
+            <td>{% trans "Monaco" %} - {% trans "Lille" %}</td>
+            <td>Total under 3.5</td>
+            <td>2.55</td>
+            <td>41.7%</td>
+            <td>+6.23%</td>
+        </tr>
+
+        <tr>
+            <td>{% trans "Leon" %}</td>
+            <td>{% trans "PSG" %} - {% trans "Amiens" %}</td>
+            <td>12</td>
+            <td>1.06</td>
+            <td>94.4%</td>
+            <td>+6.09%</td>
+        </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

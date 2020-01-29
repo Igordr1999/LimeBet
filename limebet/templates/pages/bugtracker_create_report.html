@@ -1,0 +1,26 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "LimeBet" %} | {% trans "Create report" %}{% endblock %}
+{% block data_title %}{% trans "Bugtracker. Create report" %}{% endblock %}
+
+{% block data_content %}
+    <div class="uk-button-group">
+        <a class="uk-button uk-button-primary " href="{% url 'bugtracker_create' %}">{% trans "Create report" %}</a>
+        <a class="uk-button uk-button-primary " href="{% url 'bugtracker_my_reports' %}">{% trans "My reports" %}</a>
+        <a class="uk-button uk-button-primary" href="{% url 'bugtracker_reports' %}">{% trans "All reports" %}</a>
+    </div>
+    <div class="uk-grid-large uk-child-width-1-1" uk-grid>
+        {% bootstrap_messages %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-success btn-block btn-lg">{% trans "Save" %}</button>
+            {% endbuttons %}
+        </form>
+    </div>
+{% endblock data_content %}

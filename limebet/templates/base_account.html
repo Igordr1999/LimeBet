@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% load staticfiles %}
+
+{% block title %}{% trans "BASE" %}{% endblock %}
+
+{% block navbar %}{% endblock navbar %}
+{% block footer %}{% endblock footer %}
+
+{% block content %}
+    <div class="uk-section uk-section-default uk-background-cover uk-height-viewport"  style="background-image: url(https://getuikit.com/docs/images/dark.jpg);">
+        <div class="uk-container">
+            <div class="uk-card uk-card-default uk-width-large uk-align-center">
+                <div class="uk-card-header">
+                    <div uk-grid>
+                        <div class="uk-width-auto">
+                            <a href="{% url 'home' %}"><img width="150px" src="{% static 'img/d_logo1.png' %}"></a>
+                        </div>
+                        <div class="uk-card-badge uk-label">{% block badge %}{% endblock %}</div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    {% block card_body %}
+                        {% bootstrap_messages %}
+                        <form method="post">
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            {% buttons %}
+                                <button type="submit" class="btn btn-success btn-block btn-lg">{% block card_button %}{% trans "Button" %}{% endblock card_button %}</button>
+                            {% endbuttons %}
+                        </form>
+                    {% endblock card_body%}
+                </div>
+                {% block card_footer %}
+                    <div class="uk-card-footer uk-text-center">
+                        <a href="{% url 'home' %}" class="uk-button uk-button-text">{% trans "Return to site" %}</a>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

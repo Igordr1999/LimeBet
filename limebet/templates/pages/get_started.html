@@ -1,0 +1,42 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{% trans "LimeBet" %} | {% trans "Documentaion" %}{% endblock %}
+
+{% block extra_block %}{% endblock extra_block %}
+
+{% block data_menu %}
+    <div>
+        <h2>{% trans "Get started" %}</h2>
+        <ul uk-accordion>
+            <li>
+                <a class="uk-accordion-title" href="#">1. {% trans "Register on this site" %}</a>
+                <div class="uk-accordion-content">
+                    <p>{% trans "Click on the button 'Sign up' and register on this site." %}</p>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href="#">2. {% trans "Get API key" %}(token)</a>
+                <div class="uk-accordion-content">
+                    <p>{% trans "Send a POST request for a key by putting your username and password in HTTP Body form-data." %}
+                    <a href="{% url 'get_token' %}"> {% trans "Get token" %}</a></p>
+                </div>
+            </li>
+            <li>
+                <a class="uk-accordion-title" href="#">3. {% trans "Send requests to methods with Headers" %}</a>
+                <div class="uk-accordion-content">
+                    <p>{% trans "Send requests to methods with Headers containing the Key = 'Authorization' field and Value = 'Token XXXXX' (without quotes, where XXXXX is your token)" %}</p>
+                </div>
+            </li>
+
+            <li>
+                <a class="uk-accordion-title" href="#">{% trans "HEED HELP?" %}</a>
+                <div class="uk-accordion-content">
+                    <p>{% trans "Please, contact by email" %}: Igorzz2011@yandex.ru</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock data_menu %}

@@ -1,0 +1,145 @@
+{% load static %}
+{% load i18n %}
+{% load bootstrap4 %}
+
+<html>
+<head>
+    {% block head %}
+        <!-- Main Tags -->
+        <meta charset="utf-8">
+        <title>{% block title %}Limebet{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="{% static 'img/d_logo1.png' %}" type="image/png">
+
+        <!-- Bootstrap4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <!-- UIkit3 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.3/css/uikit.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.3/js/uikit.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.3/js/uikit-icons.min.js"></script>
+
+        <!-- Yandex Map -->
+        <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=25850be5-b079-42b9-adb7-3ef5b48fed89" type="text/javascript"></script>
+
+        <!-- Moment JS -->
+        <script src="https://momentjs.com/downloads/moment-with-locales.js" type="text/javascript"></script>
+        <script src="https://momentjs.com/downloads/moment-timezone-with-data.js" type="text/javascript"></script>
+
+        <!-- limebet -->
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+    {% block navbar %}
+        <nav class="uk-navbar-container" id="navbar" uk-navbar>
+            <div class="uk-navbar-left">
+                <ul class="uk-navbar-nav">
+                    <li><a href="{% url 'home' %}"><img id="logo" src="{% static 'img/d_logo2.png' %}" width="150px"></a></li>
+                    <li>
+                        <a class="uk-navbar-toggle" href="#">
+                            <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">{% trans "Menu" %}</span>
+                        </a>
+                        <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
+                            <div class="uk-navbar-dropdown-grid uk-child-width-1-2" uk-grid>
+                                <div>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active uk-nav-header"><a href="#">{% trans "Static data" %}</a></li>
+                                        <li><a href="{% url 'sports' %}">{% trans "Sports" %}</a></li>
+                                        <li><a href="{% url 'leagues' %}">{% trans "Leagues" %}</a></li>
+                                        <li><a href="{% url 'teams' %}">{% trans "Teams" %}</a></li>
+                                        <li><a href="{% url 'bookmakers' %}">{% trans "Bookmakers" %}</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active uk-nav-header"><a href="#">{% trans "Dynamic data" %}</a></li>
+                                        <li><a href="{% url 'events' %}">{% trans "Max quotes" %}</a></li>
+                                        <li><a href="{% url 'bets' %}">{% trans "Our quotes" %}</a></li>
+                                        <li><a href="{% url 'surebets' %}">{% trans "Surebets" %}</a></li>
+                                        <li><a href="{% url 'valuebets' %}">{% trans "Valuebets" %}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="{% url 'events' %}">{% trans "Max quotes" %}</a></li>
+                    <li><a href="{% url 'bets' %}">{% trans "Our quotes" %}</a></li>
+                    <li><a href="{% url 'surebets' %}">{% trans "Surebets" %}</a></li>
+                    <li><a href="{% url 'valuebets' %}">{% trans "Valuebets" %}</a></li>
+                </ul>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        {% if user.is_authenticated %}
+                            <a href="#" class="uk-icon-link uk-margin-small-right" uk-icon="icon: user">{{ user.username }}&emsp;</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="#">{% trans "My bookmakers" %}</a></li>
+                                    <li><a href="{% url 'account_settings' %}">{% trans "Settings" %}</a></li>
+                                    <form method="post" action="{% url 'account_logout' %}">
+                                        {% csrf_token %}
+                                        <input type="submit" value="{% trans "Logout" %}" class="btn btn-danger" />
+                                    </form>
+                                </ul>
+                            </div>
+                        {% else %}
+                            <div class="uk-navbar-right">
+                                <a href="{% url 'account_signup' %}" class="uk-icon-link uk-margin-small-right">{% trans "Sign up" %}&emsp;</a>
+                                <a href="{% url 'account_login' %}" class="uk-icon-link uk-margin-small-right">{% trans "Sign in" %}&emsp;</a>
+                            </div>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock navbar %}
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block footer %}
+        <div class="uk-grid-small uk-child-width-expand@s uk-padding" uk-grid id="footer-background">
+            <div>
+                <h4 class="my-green">{% trans "For Clients" %}</h4>
+                <ul class="uk-list">
+                    <li><a href="{% url 'events' %}">{% trans "Max quotes" %}</a></li>
+                    <li><a href="{% url 'bets' %}">{% trans "Our quotes" %}</a></li>
+                    <li><a href="{% url 'surebets' %}">{% trans "Surebets" %}</a></li>
+                    <li><a href="{% url 'valuebets' %}">{% trans "Valuebets" %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="my-green">{% trans "For Researhers" %}</h4>
+                <ul class="uk-list">
+                    <li><a href="{% url 'leagues' %}">{% trans "Leagues" %}</a></li>
+                    <li><a href="{% url 'teams' %}">{% trans "Teams" %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="my-green">{% trans "For developers" %}</h4>
+                <ul class="uk-list">
+                    <li><a href="{% url 'get_started' %}">{% trans "Learning API" %}</a></li>
+                    <li><a href="{% url 'get_started' %}">{% trans "Documentation" %}</a></li>
+                    <li><a href="{% url 'bugtracker_reports' %}">{% trans "Bug Tracker" %}</a></li>
+                    <li><a href="{% url 'platform_status' %}">{% trans "Platform Status" %}</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="my-green">LimeBet</h4>
+                <ul class="uk-list">
+                    <li><a href="{% url 'about' %}">{% trans "About" %}</a></li>
+                    <li><a href="{% url 'team' %}">{% trans "Our team" %}</a></li>
+                    <li><a href="{% url 'contacts' %}">{% trans "Contacts" %}</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock footer%}
+{% endblock body%}
+</body>

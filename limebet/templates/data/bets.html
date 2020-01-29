@@ -1,0 +1,47 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load l10n %}
+{% load humanize %}
+
+{% block title %}{{ object.name }}{% endblock %}
+{% block data_title %}{{ object.name }}{% endblock %}
+
+{% block data_content %}
+    <h2 class="text-center">{% trans "Our quotes" %}</h2>
+    {% for sport in sports %}
+        <h2>{{ sport.name }}</h2>
+        <ul uk-accordion>
+            {% for league in leagues %}
+                {% if league.sport.id == sport.id %}
+                    <li>
+                        <a class="uk-accordion-title" href="#">{{ league.name }}</a>
+                        <div class="uk-accordion-content">
+                            <table class="uk-table uk-table-striped">
+                                <thead>
+                                <tr>
+                                    <th>{% trans "Home team" %}</th>
+                                    <th>{% trans "Away team" %}</th>
+                                    <th>{% trans "Start time" %}</th>
+                                    <th>{% trans "Description" %}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for event in object_list %}
+                                    {% if event.league.id == league.id %}
+                                        <tr>
+                                            <td>{{ event.home_team.name }}</td>
+                                            <td>{{ event.away_team.name }}</td>
+                                            <td>{{ event.start_time }}</td>
+                                            <td><a href="{% url 'bet' event.id %}">{% trans "Click" %}</a></td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

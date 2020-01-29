@@ -1,0 +1,1141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-21 01:33+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\data\models.py:21 .\data\models.py:41 .\data\models.py:61
+#: .\data\models.py:87 .\data\models.py:297 .\pages\models.py:11
+#: .\pages\models.py:23 .\pages\models.py:35 .\pages\models.py:47
+#: .\pages\models.py:59 .\templates\data\bookmakers.html:13
+#: .\templates\data\countries.html:13 .\templates\data\leagues.html:16
+#: .\templates\data\sports.html:13 .\templates\data\teams.html:16
+msgid "Name"
+msgstr ""
+
+#: .\data\models.py:22 .\templates\data\countries.html:14
+msgid "Alpha2"
+msgstr ""
+
+#: .\data\models.py:23 .\data\models.py:44 .\data\models.py:62
+#: .\data\models.py:91 .\data\models.py:301
+msgid "Rating"
+msgstr ""
+
+#: .\data\models.py:29
+msgid "Flag"
+msgstr ""
+
+#: .\data\models.py:35 .\data\models.py:43 .\data\models.py:90
+#: .\data\models.py:300 .\templates\data\bookmakers.html:15
+#: .\templates\data\leagues.html:18 .\templates\data\teams.html:18
+msgid "Country"
+msgstr ""
+
+#: .\data\models.py:36 .\templates\data\countries.html:6
+#: .\templates\data\countries.html:7
+msgid "Countries"
+msgstr ""
+
+#: .\data\models.py:42 .\data\models.py:285 .\templates\data\bookmakers.html:14
+msgid "URL"
+msgstr ""
+
+#: .\data\models.py:49 .\data\models.py:98 .\data\models.py:306
+#: .\templates\data\bookmakers.html:16 .\templates\data\countries.html:15
+#: .\templates\data\leagues.html:19 .\templates\data\teams.html:19
+msgid "Logo"
+msgstr ""
+
+#: .\data\models.py:55 .\data\models.py:270 .\data\models.py:284
+#: .\templates\data\surebets.html:15 .\templates\data\surebets.html:52
+#: .\templates\data\surebets.html:81 .\templates\data\surebets.html:110
+#: .\templates\data\surebets.html:147 .\templates\data\valuebets.html:14
+msgid "Bookmaker"
+msgstr ""
+
+#: .\data\models.py:56 .\templates\base.html:56
+#: .\templates\data\bookmakers.html:6 .\templates\data\bookmakers.html:7
+#: .\templates\pages\about.html:23
+msgid "Bookmakers"
+msgstr ""
+
+#: .\data\models.py:68 .\data\models.py:89 .\data\models.py:299
+#: .\templates\data\leagues.html:17 .\templates\data\teams.html:17
+msgid "Sport"
+msgstr ""
+
+#: .\data\models.py:69 .\templates\base.html:53 .\templates\data\sports.html:6
+#: .\templates\data\sports.html:7 .\templates\pages\about.html:18
+msgid "Sports"
+msgstr ""
+
+#: .\data\models.py:74 .\data\models.py:75
+msgid "Team name"
+msgstr ""
+
+#: .\data\models.py:81
+msgid "Bookmaker team name"
+msgstr ""
+
+#: .\data\models.py:82
+msgid "Bookmaker team names"
+msgstr ""
+
+#: .\data\models.py:88
+msgid "Bookmaker names"
+msgstr ""
+
+#: .\data\models.py:93
+msgid "Logo url"
+msgstr ""
+
+#: .\data\models.py:119
+msgid "Team"
+msgstr ""
+
+#: .\data\models.py:120 .\templates\base.html:55 .\templates\base.html:122
+#: .\templates\pages\about.html:38
+msgid "Teams"
+msgstr ""
+
+#: .\data\models.py:125 .\data\models.py:139 .\data\models.py:154
+msgid "Period number"
+msgstr ""
+
+#: .\data\models.py:126 .\data\models.py:140
+msgid "Team number"
+msgstr ""
+
+#: .\data\models.py:127 .\data\models.py:142 .\data\models.py:155
+msgid "Quote name"
+msgstr ""
+
+#: .\data\models.py:133 .\data\models.py:167 .\data\models.py:177
+#: .\data\models.py:233 .\templates\data\bet.html:155
+#: .\templates\data\bet.html:174 .\templates\data\event.html:124
+#: .\templates\data\event.html:143
+msgid "Handicap"
+msgstr ""
+
+#: .\data\models.py:134 .\templates\data\bet.html:107
+#: .\templates\data\bet.html:149 .\templates\data\event.html:76
+msgid "Handicaps"
+msgstr ""
+
+#: .\data\models.py:141
+msgid "Under or over"
+msgstr ""
+
+#: .\data\models.py:148 .\data\models.py:193 .\templates\data\bet.html:206
+#: .\templates\data\bet.html:226 .\templates\data\bet.html:245
+#: .\templates\data\bet.html:264 .\templates\data\event.html:175
+#: .\templates\data\event.html:214 .\templates\data\event.html:233
+msgid "Total"
+msgstr ""
+
+#: .\data\models.py:149 .\templates\data\bet.html:108
+#: .\templates\data\bet.html:200 .\templates\data\event.html:77
+#: .\templates\data\event.html:169
+msgid "Totals"
+msgstr ""
+
+#: .\data\models.py:161 .\data\models.py:224 .\data\models.py:245
+#: .\pages\models.py:111 .\templates\data\bet.html:119
+#: .\templates\data\event.html:88
+msgid "Result"
+msgstr ""
+
+#: .\data\models.py:162 .\templates\data\bet.html:106
+#: .\templates\data\event.html:75
+msgid "Results"
+msgstr ""
+
+#: .\data\models.py:168 .\data\models.py:194 .\data\models.py:225
+#: .\pages\models.py:112 .\templates\data\bet.html:156
+#: .\templates\data\bet.html:175 .\templates\data\event.html:125
+#: .\templates\data\event.html:144
+msgid "Quote value"
+msgstr ""
+
+#: .\data\models.py:175 .\data\models.py:201 .\data\models.py:231
+#: .\data\models.py:243 .\templates\data\bet.html:119
+#: .\templates\data\bet.html:149 .\templates\data\bet.html:200
+#: .\templates\data\event.html:88 .\templates\data\event.html:169
+msgid "full time"
+msgstr ""
+
+#: .\data\models.py:176 .\data\models.py:202 .\data\models.py:232
+#: .\data\models.py:244 .\templates\data\bet.html:119
+#: .\templates\data\bet.html:149 .\templates\data\bet.html:200
+#: .\templates\data\event.html:169
+msgid "period"
+msgstr ""
+
+#: .\data\models.py:187
+msgid "Handicap quote"
+msgstr ""
+
+#: .\data\models.py:188 .\data\models.py:267
+msgid "Handicap quotes"
+msgstr ""
+
+#: .\data\models.py:204
+msgid "Total under"
+msgstr ""
+
+#: .\data\models.py:205
+msgid "Total over"
+msgstr ""
+
+#: .\data\models.py:206
+msgid "all teams"
+msgstr ""
+
+#: .\data\models.py:218
+msgid "Total quote"
+msgstr ""
+
+#: .\data\models.py:219 .\data\models.py:268
+msgid "Total quotes"
+msgstr ""
+
+#: .\data\models.py:261
+msgid "Result quote"
+msgstr ""
+
+#: .\data\models.py:262 .\data\models.py:269
+msgid "Result quotes"
+msgstr ""
+
+#: .\data\models.py:271
+msgid "Bookmaker event url"
+msgstr ""
+
+#: .\data\models.py:272 .\pages\models.py:91
+msgid "Update time"
+msgstr ""
+
+#: .\data\models.py:278 .\data\models.py:336
+msgid "Quotes"
+msgstr ""
+
+#: .\data\models.py:279
+msgid "Quotes set"
+msgstr ""
+
+#: .\data\models.py:291
+msgid "Bookmaker url"
+msgstr ""
+
+#: .\data\models.py:292 .\data\models.py:298
+msgid "Bookmaker urls"
+msgstr ""
+
+#: .\data\models.py:311
+msgid "Background"
+msgstr ""
+
+#: .\data\models.py:318 .\data\models.py:326
+msgid "League"
+msgstr ""
+
+#: .\data\models.py:319 .\templates\base.html:54 .\templates\base.html:121
+#: .\templates\pages\about.html:28
+msgid "Leagues"
+msgstr ""
+
+#: .\data\models.py:324 .\templates\data\bets.html:22
+#: .\templates\data\events.html:22
+msgid "Home team"
+msgstr ""
+
+#: .\data\models.py:325 .\templates\data\bets.html:23
+#: .\templates\data\events.html:23
+msgid "Away team"
+msgstr ""
+
+#: .\data\models.py:327 .\templates\data\bets.html:24
+#: .\templates\data\events.html:24
+msgid "Start time"
+msgstr ""
+
+#: .\data\models.py:328
+msgid "Period 1; Team 1"
+msgstr ""
+
+#: .\data\models.py:329
+msgid "Period 1; Team 2"
+msgstr ""
+
+#: .\data\models.py:330
+msgid "Period 2; Team 1"
+msgstr ""
+
+#: .\data\models.py:331
+msgid "Period 2; Team 2"
+msgstr ""
+
+#: .\data\models.py:332
+msgid "Period 3; Team 1"
+msgstr ""
+
+#: .\data\models.py:333
+msgid "Period 3; Team 2"
+msgstr ""
+
+#: .\data\models.py:334
+msgid "Period 4; Team 1"
+msgstr ""
+
+#: .\data\models.py:335
+msgid "Period 4; Team 2"
+msgstr ""
+
+#: .\data\models.py:973 .\pages\models.py:110 .\templates\data\surebets.html:16
+#: .\templates\data\surebets.html:53 .\templates\data\surebets.html:82
+#: .\templates\data\surebets.html:111 .\templates\data\surebets.html:148
+#: .\templates\data\valuebets.html:15
+msgid "Event"
+msgstr ""
+
+#: .\data\models.py:974
+msgid "Events"
+msgstr ""
+
+#: .\limebet\settings.py:142
+msgid "English"
+msgstr ""
+
+#: .\limebet\settings.py:143
+msgid "Russian"
+msgstr ""
+
+#: .\limebet\settings.py:144
+msgid "German"
+msgstr ""
+
+#: .\limebet\settings.py:145
+msgid "French"
+msgstr ""
+
+#: .\limebet\settings.py:146
+msgid "Ukrainian"
+msgstr ""
+
+#: .\pages\models.py:17
+msgid "Bug Tracker Product"
+msgstr ""
+
+#: .\pages\models.py:18
+msgid "Bug Tracker Products"
+msgstr ""
+
+#: .\pages\models.py:29
+msgid "Bug tracker tag"
+msgstr ""
+
+#: .\pages\models.py:30
+msgid "Bug tracker tags"
+msgstr ""
+
+#: .\pages\models.py:41 .\pages\models.py:42
+msgid "Bug tracker type"
+msgstr ""
+
+#: .\pages\models.py:53
+msgid "Bug tracker priority"
+msgstr ""
+
+#: .\pages\models.py:54
+msgid "Bug tracker priorities"
+msgstr ""
+
+#: .\pages\models.py:65
+msgid "Bug tracker status"
+msgstr ""
+
+#: .\pages\models.py:66
+msgid "Bug tracker statuses"
+msgstr ""
+
+#: .\pages\models.py:71 .\pages\models.py:109
+msgid "Owner"
+msgstr ""
+
+#: .\pages\models.py:72 .\templates\pages\bugtracker_report.html:53
+msgid "Product"
+msgstr ""
+
+#: .\pages\models.py:73
+msgid "Title"
+msgstr ""
+
+#: .\pages\models.py:74 .\templates\data\bets.html:25
+#: .\templates\data\events.html:25 .\templates\pages\bugtracker_report.html:32
+msgid "Description"
+msgstr ""
+
+#: .\pages\models.py:75 .\templates\pages\bugtracker_report.html:36
+msgid "Playback steps"
+msgstr ""
+
+#: .\pages\models.py:76
+msgid "Expected Result"
+msgstr ""
+
+#: .\pages\models.py:77
+msgid "Factual Result"
+msgstr ""
+
+#: .\pages\models.py:78
+msgid "Type report"
+msgstr ""
+
+#: .\pages\models.py:79 .\templates\pages\bugtracker_report.html:68
+msgid "Tags"
+msgstr ""
+
+#: .\pages\models.py:80 .\templates\pages\bugtracker_report.html:63
+msgid "Priority"
+msgstr ""
+
+#: .\pages\models.py:86
+msgid "Screenshot"
+msgstr ""
+
+#: .\pages\models.py:87 .\templates\pages\bugtracker_report.html:73
+msgid "Status"
+msgstr ""
+
+#: .\pages\models.py:88
+msgid "Admin answer"
+msgstr ""
+
+#: .\pages\models.py:89
+msgid "Visible"
+msgstr ""
+
+#: .\pages\models.py:90
+msgid "Create time"
+msgstr ""
+
+#: .\pages\models.py:97
+msgid "Bug tracker report"
+msgstr ""
+
+#: .\pages\models.py:98
+msgid "Bug tracker reports"
+msgstr ""
+
+#: .\pages\models.py:113
+msgid "Amount"
+msgstr ""
+
+#: .\pages\models.py:120
+msgid "My result quote"
+msgstr ""
+
+#: .\pages\models.py:121
+msgid "My result quotes"
+msgstr ""
+
+#: .\templates\account\login.html:8 .\templates\account\login.html:9
+#: .\templates\profiles\login.html:1 .\templates\profiles\login.html:5
+msgid "Login"
+msgstr ""
+
+#: .\templates\account\login.html:10 .\templates\base.html:95
+msgid "Sign in"
+msgstr ""
+
+#: .\templates\account\logout.html:8 .\templates\account\logout.html:9
+#: .\templates\account\logout.html:14
+msgid "Log out"
+msgstr ""
+
+#: .\templates\account\password_change.html:8
+#: .\templates\account\password_change.html:9
+msgid "Password change"
+msgstr ""
+
+#: .\templates\account\password_change.html:10
+msgid "Change"
+msgstr ""
+
+#: .\templates\account\password_reset.html:8
+#: .\templates\account\password_reset.html:9
+#: .\templates\account\password_reset_sent.html:8
+#: .\templates\account\password_reset_sent.html:9
+#: .\templates\account\password_reset_token.html:8
+#: .\templates\account\password_reset_token.html:9
+msgid "Password reset"
+msgstr ""
+
+#: .\templates\account\password_reset.html:10
+#: .\templates\account\password_reset_sent.html:10
+#: .\templates\account\password_reset_token.html:10
+msgid "Reset"
+msgstr ""
+
+#: .\templates\account\settings.html:8 .\templates\account\settings.html:9
+#: .\templates\base.html:85
+msgid "Settings"
+msgstr ""
+
+#: .\templates\account\settings.html:10
+#: .\templates\pages\bugtracker_create_report.html:22
+msgid "Save"
+msgstr ""
+
+#: .\templates\account\signup.html:8
+msgid "Sign Up"
+msgstr ""
+
+#: .\templates\account\signup.html:9
+msgid "Registration"
+msgstr ""
+
+#: .\templates\account\signup.html:10 .\templates\base.html:94
+#: .\templates\profiles\registration.html:1
+#: .\templates\profiles\registration.html:5
+msgid "Sign up"
+msgstr ""
+
+#: .\templates\base.html:46
+msgid "Menu"
+msgstr ""
+
+#: .\templates\base.html:52
+msgid "Static data"
+msgstr ""
+
+#: .\templates\base.html:61
+msgid "Dynamic data"
+msgstr ""
+
+#: .\templates\base.html:62 .\templates\base.html:71 .\templates\base.html:112
+#: .\templates\base_data.html:23 .\templates\data\events.html:10
+msgid "Max quotes"
+msgstr ""
+
+#: .\templates\base.html:63 .\templates\base.html:72 .\templates\base.html:113
+#: .\templates\base_data.html:26 .\templates\data\bets.html:10
+msgid "Our quotes"
+msgstr ""
+
+#: .\templates\base.html:64 .\templates\base.html:73 .\templates\base.html:114
+#: .\templates\base_data.html:29 .\templates\data\surebets.html:6
+#: .\templates\data\surebets.html:7
+msgid "Surebets"
+msgstr ""
+
+#: .\templates\base.html:65 .\templates\base.html:74 .\templates\base.html:115
+#: .\templates\base_data.html:32 .\templates\data\valuebets.html:6
+#: .\templates\data\valuebets.html:7
+msgid "Valuebets"
+msgstr ""
+
+#: .\templates\base.html:84
+msgid "My bookmakers"
+msgstr ""
+
+#: .\templates\base.html:88
+msgid "Logout"
+msgstr ""
+
+#: .\templates\base.html:110
+msgid "For Clients"
+msgstr ""
+
+#: .\templates\base.html:119
+msgid "For Researhers"
+msgstr ""
+
+#: .\templates\base.html:126
+msgid "For developers"
+msgstr ""
+
+#: .\templates\base.html:128
+msgid "Learning API"
+msgstr ""
+
+#: .\templates\base.html:129
+msgid "Documentation"
+msgstr ""
+
+#: .\templates\base.html:130
+msgid "Bug Tracker"
+msgstr ""
+
+#: .\templates\base.html:131
+msgid "Platform Status"
+msgstr ""
+
+#: .\templates\base.html:137 .\templates\pages\about.html:6
+msgid "About"
+msgstr ""
+
+#: .\templates\base.html:138 .\templates\pages\our_team.html:6
+#: .\templates\pages\our_team.html:11
+msgid "Our team"
+msgstr ""
+
+#: .\templates\base.html:139 .\templates\pages\contacts.html:6
+#: .\templates\pages\contacts.html:11
+msgid "Contacts"
+msgstr ""
+
+#: .\templates\base_account.html:6
+msgid "BASE"
+msgstr ""
+
+#: .\templates\base_account.html:30
+msgid "Button"
+msgstr ""
+
+#: .\templates\base_account.html:37
+msgid "Return to site"
+msgstr ""
+
+#: .\templates\base_data.html:21
+msgid "Sections"
+msgstr ""
+
+#: .\templates\data\bet.html:26 .\templates\data\event.html:26
+msgid "Days"
+msgstr ""
+
+#: .\templates\data\bet.html:31 .\templates\data\event.html:31
+msgid "Hours"
+msgstr ""
+
+#: .\templates\data\bet.html:36 .\templates\data\event.html:36
+msgid "Minutes"
+msgstr ""
+
+#: .\templates\data\bet.html:41 .\templates\data\event.html:41
+msgid "Seconds"
+msgstr ""
+
+#: .\templates\data\bet.html:60
+msgid "Make bet. Result"
+msgstr ""
+
+#: .\templates\data\bet.html:70
+msgid "Make bet. Handicap"
+msgstr ""
+
+#: .\templates\data\bet.html:80
+msgid "Make bet. Total"
+msgstr ""
+
+#: .\templates\data\bet.html:90 .\templates\data\event.html:59
+msgid "All quotes"
+msgstr ""
+
+#: .\templates\data\bet.html:207 .\templates\data\bet.html:246
+#: .\templates\data\event.html:176 .\templates\data\event.html:215
+msgid "Under"
+msgstr ""
+
+#: .\templates\data\bet.html:227 .\templates\data\bet.html:265
+#: .\templates\data\event.html:234
+msgid "Over"
+msgstr ""
+
+#: .\templates\data\bets.html:35 .\templates\data\events.html:35
+msgid "Click"
+msgstr ""
+
+#: .\templates\data\event.html:67
+msgid "Full time"
+msgstr ""
+
+#: .\templates\data\leagues.html:7 .\templates\data\leagues.html:8
+msgid "First 20 leagues by filter"
+msgstr ""
+
+#: .\templates\data\leagues.html:20
+msgid "Music"
+msgstr ""
+
+#: .\templates\data\leagues.html:41
+msgid "No music =(   "
+msgstr ""
+
+#: .\templates\data\leagues.html:58 .\templates\data\teams.html:50
+#: .\templates\pages\bugtracker_report.html:7
+#: .\templates\pages\bugtracker_reports.html:7
+#: .\templates\pages\bugtracker_reports.html:51
+msgid "Search"
+msgstr ""
+
+#: .\templates\data\surebets.html:10 .\templates\data\valuebets.html:10
+msgid "Football. Top 5"
+msgstr ""
+
+#: .\templates\data\surebets.html:14 .\templates\data\surebets.html:51
+#: .\templates\data\surebets.html:80 .\templates\data\surebets.html:109
+#: .\templates\data\surebets.html:146
+msgid "Profit"
+msgstr ""
+
+#: .\templates\data\surebets.html:17 .\templates\data\surebets.html:54
+#: .\templates\data\surebets.html:83 .\templates\data\surebets.html:112
+#: .\templates\data\surebets.html:149 .\templates\data\valuebets.html:16
+msgid "Bet"
+msgstr ""
+
+#: .\templates\data\surebets.html:18 .\templates\data\surebets.html:55
+#: .\templates\data\surebets.html:84 .\templates\data\surebets.html:113
+#: .\templates\data\surebets.html:150 .\templates\data\valuebets.html:17
+msgid "Coefficient"
+msgstr ""
+
+#: .\templates\data\surebets.html:24 .\templates\data\valuebets.html:42
+msgid "Fonbet"
+msgstr ""
+
+#: .\templates\data\surebets.html:25
+msgid "Reims"
+msgstr ""
+
+#: .\templates\data\surebets.html:25
+msgid "Lyon"
+msgstr ""
+
+#: .\templates\data\surebets.html:32 .\templates\data\valuebets.html:60
+msgid "Leon"
+msgstr ""
+
+#: .\templates\data\surebets.html:40
+msgid "MarathonBet"
+msgstr ""
+
+#: .\templates\data\surebets.html:61 .\templates\data\surebets.html:90
+#: .\templates\data\surebets.html:127
+msgid "Baltbet"
+msgstr ""
+
+#: .\templates\data\surebets.html:62
+msgid "RB Leipzig"
+msgstr ""
+
+#: .\templates\data\surebets.html:62
+msgid "Augsburg"
+msgstr ""
+
+#: .\templates\data\surebets.html:69 .\templates\data\surebets.html:164
+msgid "Winline"
+msgstr ""
+
+#: .\templates\data\surebets.html:91
+msgid "Mallorca"
+msgstr ""
+
+#: .\templates\data\surebets.html:91
+msgid "Sevilla"
+msgstr ""
+
+#: .\templates\data\surebets.html:98
+msgid "Marathon"
+msgstr ""
+
+#: .\templates\data\surebets.html:119 .\templates\data\valuebets.html:24
+#: .\templates\data\valuebets.html:33
+msgid "1XBET"
+msgstr ""
+
+#: .\templates\data\surebets.html:120
+msgid "Brugge"
+msgstr ""
+
+#: .\templates\data\surebets.html:120
+msgid "Man Utd"
+msgstr ""
+
+#: .\templates\data\surebets.html:135 .\templates\data\surebets.html:156
+#: .\templates\data\valuebets.html:51
+msgid "Parimatch"
+msgstr ""
+
+#: .\templates\data\surebets.html:157 .\templates\data\valuebets.html:61
+msgid "PSG"
+msgstr ""
+
+#: .\templates\data\surebets.html:157 .\templates\data\valuebets.html:61
+msgid "Amiens"
+msgstr ""
+
+#: .\templates\data\teams.html:7 .\templates\data\teams.html:8
+msgid "First 20 teams by filter"
+msgstr ""
+
+#: .\templates\data\valuebets.html:18
+msgid "Probability"
+msgstr ""
+
+#: .\templates\data\valuebets.html:19
+msgid "Overvaluation"
+msgstr ""
+
+#: .\templates\data\valuebets.html:25
+msgid "Marseille"
+msgstr ""
+
+#: .\templates\data\valuebets.html:25
+msgid "Nimes"
+msgstr ""
+
+#: .\templates\data\valuebets.html:34
+msgid "Torino"
+msgstr ""
+
+#: .\templates\data\valuebets.html:34
+msgid "SPAL"
+msgstr ""
+
+#: .\templates\data\valuebets.html:43
+msgid "Malaga"
+msgstr ""
+
+#: .\templates\data\valuebets.html:43
+msgid "Lugo"
+msgstr ""
+
+#: .\templates\data\valuebets.html:52
+msgid "Monaco"
+msgstr ""
+
+#: .\templates\data\valuebets.html:52
+msgid "Lille"
+msgstr ""
+
+#: .\templates\pages\about.html:6
+#: .\templates\pages\bugtracker_create_report.html:7
+#: .\templates\pages\bugtracker_report.html:7
+#: .\templates\pages\bugtracker_reports.html:7
+#: .\templates\pages\contacts.html:6 .\templates\pages\get_started.html:6
+#: .\templates\pages\our_team.html:6
+msgid "LimeBet"
+msgstr ""
+
+#: .\templates\pages\about.html:11
+msgid ""
+"LimeBet is a betting trader. LimeBet is a financial instrument for searching "
+"and researching betting quotes, analyzing sports events and concluding "
+"winning bets on the websites of well-known bookmakers"
+msgstr ""
+
+#: .\templates\pages\about.html:13
+msgid ""
+"We independently analyze bookmaker quotes and produce the best surebets, "
+"betting corridors and overvalued bets thanks to machine learning and proven "
+"financial strategies. This way you win real money in the long run."
+msgstr ""
+
+#: .\templates\pages\about.html:33
+msgid "Unique quotes by events"
+msgstr ""
+
+#: .\templates\pages\about.html:43
+msgid "Events per week"
+msgstr ""
+
+#: .\templates\pages\about.html:47
+msgid "Service features"
+msgstr ""
+
+#: .\templates\pages\about.html:49
+msgid "Search max quotes"
+msgstr ""
+
+#: .\templates\pages\about.html:50
+msgid "Search for maximum coefficients for each quote and each event."
+msgstr ""
+
+#: .\templates\pages\about.html:52
+msgid "Virtual betting bets"
+msgstr ""
+
+#: .\templates\pages\about.html:53
+msgid ""
+"We conduct a forecast competition among our users. To do this, we set our "
+"coefficients."
+msgstr ""
+
+#: .\templates\pages\about.html:55
+msgid "We display ready surebets, betting corridors and overvalued bets"
+msgstr ""
+
+#: .\templates\pages\about.html:56
+msgid ""
+"We analyze the line in real time and with the help of machine learning and "
+"financial strategies, we derive the best surebets, betting corridors and "
+"overvalued bets"
+msgstr ""
+
+#: .\templates\pages\about.html:58
+msgid "REST API support"
+msgstr ""
+
+#: .\templates\pages\about.html:59
+msgid ""
+"Download megabytes of data in tens of thousands of lines in a few seconds in "
+"easy automatic mode"
+msgstr ""
+
+#: .\templates\pages\about.html:61
+msgid "Foreign language support"
+msgstr ""
+
+#: .\templates\pages\about.html:62
+msgid ""
+"Our site fully supports 5 languages: Russian, English, German, French and "
+"Ukrainian."
+msgstr ""
+
+#: .\templates\pages\bugtracker_create_report.html:7
+#: .\templates\pages\bugtracker_create_report.html:12
+#: .\templates\pages\bugtracker_report.html:14
+#: .\templates\pages\bugtracker_reports.html:15
+msgid "Create report"
+msgstr ""
+
+#: .\templates\pages\bugtracker_create_report.html:8
+msgid "Bugtracker. Create report"
+msgstr ""
+
+#: .\templates\pages\bugtracker_create_report.html:13
+#: .\templates\pages\bugtracker_report.html:15
+#: .\templates\pages\bugtracker_reports.html:16
+msgid "My reports"
+msgstr ""
+
+#: .\templates\pages\bugtracker_create_report.html:14
+#: .\templates\pages\bugtracker_report.html:16
+#: .\templates\pages\bugtracker_reports.html:17
+msgid "All reports"
+msgstr ""
+
+#: .\templates\pages\bugtracker_report.html:8
+#: .\templates\pages\bugtracker_reports.html:8
+msgid "Bug tracker"
+msgstr ""
+
+#: .\templates\pages\bugtracker_report.html:40
+msgid "Expected result"
+msgstr ""
+
+#: .\templates\pages\bugtracker_report.html:43
+msgid "Factual result"
+msgstr ""
+
+#: .\templates\pages\bugtracker_report.html:58
+msgid "Type"
+msgstr ""
+
+#: .\templates\pages\bugtracker_report.html:79
+msgid "Return"
+msgstr ""
+
+#: .\templates\pages\bugtracker_reports.html:38
+msgid "Read more"
+msgstr ""
+
+#: .\templates\pages\bugtracker_reports.html:45
+msgid "Filters"
+msgstr ""
+
+#: .\templates\pages\contacts.html:11
+msgid "Link"
+msgstr ""
+
+#: .\templates\pages\contacts.html:16 .\templates\pages\our_team.html:16
+msgid "Igor Drobyashchenko, TeamLead & FullStack Developer"
+msgstr ""
+
+#: .\templates\pages\contacts.html:21 .\templates\pages\our_team.html:21
+msgid "Denis Sannikov, Android Developer"
+msgstr ""
+
+#: .\templates\pages\contacts.html:26 .\templates\pages\our_team.html:26
+msgid "Edward Mailyan, Sprint manager & Frontend Developer"
+msgstr ""
+
+#: .\templates\pages\contacts.html:31 .\templates\pages\our_team.html:31
+msgid "Maxim Vasilyuk, Tester"
+msgstr ""
+
+#: .\templates\pages\contacts.html:36 .\templates\pages\our_team.html:36
+msgid "Anton Manohin, Tester"
+msgstr ""
+
+#: .\templates\pages\get_started.html:6
+msgid "Documentaion"
+msgstr ""
+
+#: .\templates\pages\get_started.html:12
+msgid "Get started"
+msgstr ""
+
+#: .\templates\pages\get_started.html:15
+msgid "Register on this site"
+msgstr ""
+
+#: .\templates\pages\get_started.html:17
+msgid "Click on the button 'Sign up' and register on this site."
+msgstr ""
+
+#: .\templates\pages\get_started.html:21
+msgid "Get API key"
+msgstr ""
+
+#: .\templates\pages\get_started.html:23
+msgid ""
+"Send a POST request for a key by putting your username and password in HTTP "
+"Body form-data."
+msgstr ""
+
+#: .\templates\pages\get_started.html:24
+msgid "Get token"
+msgstr ""
+
+#: .\templates\pages\get_started.html:28
+msgid "Send requests to methods with Headers"
+msgstr ""
+
+#: .\templates\pages\get_started.html:30
+msgid ""
+"Send requests to methods with Headers containing the Key = 'Authorization' "
+"field and Value = 'Token XXXXX' (without quotes, where XXXXX is your token)"
+msgstr ""
+
+#: .\templates\pages\get_started.html:35
+msgid "HEED HELP?"
+msgstr ""
+
+#: .\templates\pages\get_started.html:37
+msgid "Please, contact by email"
+msgstr ""
+
+#: .\templates\pages\home.html:6 .\templates\pages\platform_status.html:6
+msgid "Limebet"
+msgstr ""
+
+#: .\templates\pages\home.html:6
+msgid "Home page"
+msgstr ""
+
+#: .\templates\pages\home.html:25 .\templates\pages\home.html:26
+#: .\templates\pages\home.html:27 .\templates\pages\home.html:28
+#: .\templates\pages\home.html:29 .\templates\pages\home.html:30
+#: .\templates\pages\home.html:31 .\templates\pages\home.html:32
+#: .\templates\pages\home.html:33
+msgid "BLOCK"
+msgstr ""
+
+#: .\templates\pages\home.html:58
+msgid "Successful financial strategies"
+msgstr ""
+
+#: .\templates\pages\home.html:59
+msgid ""
+"We use betting forks, odds (revalued bets) and betting corridors. More "
+"details on the How It Works page."
+msgstr ""
+
+#: .\templates\pages\home.html:69
+msgid "We explore many sporting events and quotes"
+msgstr ""
+
+#: .\templates\pages\home.html:70
+msgid "Over 50 leagues in more than 15 countries."
+msgstr ""
+
+#: .\templates\pages\home.html:80
+msgid "We have an open public API"
+msgstr ""
+
+#: .\templates\pages\home.html:81
+msgid "More details on the Developer page."
+msgstr ""
+
+#: .\templates\pages\home.html:91
+msgid "We use machine learning"
+msgstr ""
+
+#: .\templates\pages\home.html:92
+msgid "We use machine learning to predict the outcome of sporting events."
+msgstr ""
+
+#: .\templates\pages\home.html:102
+msgid "Our winning strategies are based on probability theory"
+msgstr ""
+
+#: .\templates\pages\home.html:103
+msgid "More details on the How It Works page."
+msgstr ""
+
+#: .\templates\pages\platform_status.html:6
+msgid "Platform status"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:11
+msgid "All systems"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:17
+msgid "Our parsers"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:19
+msgid "Checking the operation of our parsers"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:23
+msgid "Our databases"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:25
+msgid "Verifying database operation"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:29
+msgid "Search of surebets and other"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:31
+msgid "Search of surebets, bookmaker revalued quotes and corridors"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:35
+msgid "Our bookmaker"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:37
+msgid "Checking the operation of our bookmaker"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:41
+msgid "REST API"
+msgstr ""
+
+#: .\templates\pages\platform_status.html:43
+msgid "API performance"
+msgstr ""

@@ -1,0 +1,36 @@
+{% extends 'base_data.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load bootstrap4 %}
+
+{% block title %}{% trans "Countries" %}{% endblock %}
+{% block data_title %}{% trans "Countries" %}{% endblock %}
+
+{% block data_content %}
+    <table class="uk-table uk-table-striped uk-table-hover uk-table-small">
+        <thead>
+        <tr>
+            <th>{% trans "Name" %}</th>
+            <th>{% trans "Alpha2" %}</th>
+            <th>{% trans "Logo" %}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for country in object_list %}
+            <tr>
+                <td>{{ country.name }}</td>
+                <td>{{ country.alpha2 }}</td>
+                <td>
+                    {% if country.flag %}
+                        <img class="uk-preserve-width" src="{{ country.flag.url }}" width="40" alt="">
+                    {% else %}
+                        <img class="uk-preserve-width" src="#" width="40" alt="NO IMAGE">
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% bootstrap_pagination page_obj %}
+{% endblock %}

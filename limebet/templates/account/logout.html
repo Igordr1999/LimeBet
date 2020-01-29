@@ -1,0 +1,16 @@
+{% extends 'base_account.html' %}
+{% load i18n %}
+{% load bootstrap4 %}
+
+{% block navbar %}{% endblock navbar %}
+{% block footer %}{% endblock footer %}
+
+{% block title %}{% trans "Log out" %}{% endblock %}
+{% block badge %}{% trans "Log out" %}{% endblock %}
+
+{% block card_body %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-block btn-lg">{% trans "Log out" %}</button>
+    </form>
+{% endblock card_body %}

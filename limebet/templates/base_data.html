@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+    <div class="uk-section uk-section-default uk-padding-remove-vertical">
+        <div class="uk-container uk-margin-bottom">
+            <div uk-grid="" class="uk-grid uk-flex-center">
+                <div class="uk-width-1-1 uk-first-column">
+                    <h2 class="uk-title uk-text-center uk-text-primary uk-padding-small uk-margin-remove">
+                        {% block data_title %}{% endblock %}
+                    </h2>
+                    {% block data_menu %}{% endblock %}
+                </div>
+                {% block top_content %}{% endblock %}
+                <div class="uk-width-4-5 uk-first-column uk-margin-remove-top">
+                    {% block data_content %}{% endblock %}
+                </div>
+                <div class="uk-width-1-5 uk-margin-remove-top">
+                    {% block extra_block %}
+                        <ul class="uk-nav-default uk-nav-parent-icon" uk-nav>
+                            <li class="uk-nav-header">{% trans "Sections" %}</li>
+                            <li><a href="{% url 'events' %}"><span class="uk-margin-small-right" uk-icon="icon: arrow-up"></span>
+                                {% trans "Max quotes" %}</a>
+                            </li>
+                            <li><a href="{% url 'bets' %}"><span class="uk-margin-small-right" uk-icon="icon: happy"></span>
+                                {% trans "Our quotes" %}</a>
+                            </li>
+                            <li><a href="{% url 'surebets' %}"><span class="uk-margin-small-right" uk-icon="icon: git-fork"></span>
+                                {% trans "Surebets" %}</a>
+                            </li>
+                            <li><a href="{% url 'valuebets' %}"><span class="uk-margin-small-right" uk-icon="icon: bolt"></span>
+                                {% trans "Valuebets" %}</a>
+                            </li>
+                        </ul>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
