@@ -34,7 +34,7 @@ selenium = "==3.141.0"
 webdriver-manager = "==1.7"
 lxml = "==4.4.1"
 django-rest-swagger = "==2.2.0"
-pyyaml = "==5.1.2"
+pyyaml = "==5.4"
 django-user-accounts = "==2.1.0"
 
 [requires]
