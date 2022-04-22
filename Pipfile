@@ -7,7 +7,7 @@ name = "pypi"
 tox = "==3.14.0"
 
 [packages]
-Django = "==2.2.5"
+Django = "==2.2.28"
 psycopg2-binary = "==2.8.3"
 boto3 = "==1.9.233"
 django-bootstrap4 = "==1.0.1"
